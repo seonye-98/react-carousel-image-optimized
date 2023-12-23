@@ -1,19 +1,55 @@
 {
-  "name": "practice2",
-  "private": true,
-  "version": "0.0.0",
+  "name": "react-carousel-image-optimized",
+  "description": "Carousel Component\n  1.If you specify the width of the entire carousel component, it automatically calculates the item width.\n 2.Automatically optimizes images.",
+  "keywords": [
+    "react",
+    "component",
+    "carousel",
+    "react-carousel",
+    "react-carousel-image-optimized",
+    "image-optimized-carousel"
+  ],
+  "author": {
+    "name": "seonye",
+    "email": "kss02281@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seonye-98/react-carousel-image-optimized.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seonye-98/react-carousel-image-optimized/issues",
+    "email": "kss02281@gmail.com"
+  },
+  "private": false,
+  "license": "MIT",
+  "version": "0.0.1",
   "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/index.es.js",
+      "import": "./dist/index.es.js",
+      "default": "./dist/index.cjs.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "rm -rf dist && tsc && vite build",
+    "clean:package": "yarn remove react-carousel-image-optimized && yarn cache clean && rm -rf ./react-carousel-image-optimized-v0.0.1.tgz",
+    "add:package": "yarn add ./react-carousel-image-optimized-v0.0.1.tgz"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "react": "^18.2.0",
+    "react-carousel-image-optimized": "./react-carousel-image-optimized-v0.0.1.tgz",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
@@ -37,6 +73,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "storybook": "7.6.6",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.6.4"
   }
 }
